@@ -41,6 +41,19 @@ class Triangle
       Console.WriteLine("Second Check");
     }
   }
+
+  public void isTriangle()
+  {
+    if (_lengthA + _lengthB < _lengthC || _lengthA + _lengthC < _lengthB || _lengthB + _lengthC < _lengthA)
+    {
+      Console.WriteLine("Not a triangle.");
+    }
+    else
+    {
+      Console.WriteLine("Exception");
+      CheckTriangle();
+    }
+  }
 }
 
 
@@ -49,20 +62,19 @@ public class Program
   public static void Main()
   {
     Triangle newTriangle = new Triangle();
+
     Console.WriteLine("Set side length A");
     string lengthA = Console.ReadLine();
     newTriangle.SetLengthA(int.Parse(lengthA));
+
     Console.WriteLine("Set side length B");
     string lengthB = Console.ReadLine();
     newTriangle.SetLengthB(int.Parse(lengthB));
+
     Console.WriteLine("Set side length C");
     string lengthC = Console.ReadLine();
     newTriangle.SetLengthC(int.Parse(lengthC));
-    // newTriangle.SetLengthA(1);
-    // newTriangle.SetLengthB(12);
-    // newTriangle.SetLengthC(13);
 
-    newTriangle.CheckTriangle();
-
+    newTriangle.isTriangle();
   }
 }
