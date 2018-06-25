@@ -22,25 +22,25 @@ class Triangle
       _lengthC = newLengthC;
   }
 
-    public void CheckTriangle()
+  public void CheckTriangle()
+  {
+    if (_lengthA == _lengthB && _lengthB == _lengthC)
     {
-        if (_lengthA == _lengthB && _lengthB == _lengthC)
-        {
-            Console.WriteLine( "equalateral");
-        }
-        else if(_lengthA == _lengthB || _lengthB == _lengthC || _lengthA == _lengthC)
-        {
-            Console.WriteLine( "isosceles");
-        }
-        else if(!(_lengthA == _lengthB && _lengthB == _lengthC && A == _lengthC))
-        {
-            Console.WriteLine( "scalene");
-        }
-        else
-        {
-          Console.WriteLine( "poo");
-        }
+        Console.WriteLine("equalateral");
     }
+    else if(_lengthA == _lengthB || _lengthB == _lengthC || _lengthA == _lengthC)
+    {
+        Console.WriteLine("isosceles");
+    }
+    else if(!(_lengthA == _lengthB && _lengthB == _lengthC && _lengthA == _lengthC))
+    {
+        Console.WriteLine("scalene");
+    }
+    else
+    {
+      Console.WriteLine("Second Check");
+    }
+  }
 }
 
 
@@ -49,9 +49,18 @@ public class Program
   public static void Main()
   {
     Triangle newTriangle = new Triangle();
-    newTriangle.SetLengthA(1);
-    newTriangle.SetLengthB(12);
-    newTriangle.SetLengthC(13);
+    Console.WriteLine("Set side length A");
+    string lengthA = Console.ReadLine();
+    newTriangle.SetLengthA(int.Parse(lengthA));
+    Console.WriteLine("Set side length B");
+    string lengthB = Console.ReadLine();
+    newTriangle.SetLengthB(int.Parse(lengthB));
+    Console.WriteLine("Set side length C");
+    string lengthC = Console.ReadLine();
+    newTriangle.SetLengthC(int.Parse(lengthC));
+    // newTriangle.SetLengthA(1);
+    // newTriangle.SetLengthB(12);
+    // newTriangle.SetLengthC(13);
 
     newTriangle.CheckTriangle();
 
